@@ -1,10 +1,9 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import datas from "./Utilis";
-// import yaml from "js-yaml";
-// import dataFile from "./dataUtils.yml";
-// import fs from "fs";
-// import readYaml from "read-yaml";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBackward } from "@fortawesome/free-solid-svg-icons";
+
 let obj = datas;
 
 function App() {
@@ -12,25 +11,6 @@ function App() {
   const [paused, setPaused] = useState(false);
   const [showDuration, setShowDuration] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("English");
-
-  // useEffect(() => {
-  //   readYaml("./dataUtils.yml", function (err, data) {
-  //     if (err) throw err;
-  //     console.log(data);
-  //   });
-
-  //   const fetchData = () => {
-  //     try {
-  //       console.log(dataFile);
-  //       const parsedData = yaml.safeLoad(dataFile);
-  //       console.log(parsedData);
-  //     } catch (error) {
-  //       console.error("Error loading YAML data:", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
 
   const [count, setCount] = useState(obj[index]?.counter);
 
@@ -126,81 +106,78 @@ function App() {
   return (
     <div className="App">
       {obj[index] && (
-        <div className="text-container">
-          <div className="flex-container">
-            <div>
-              <h1>
-                {selectedLanguage === "English"
-                  ? obj[index].header?.English
-                  : obj[index].header?.Tamil}
-              </h1>
-              <p>
-                {selectedLanguage === "English"
-                  ? obj[index].text?.English
-                  : obj[index].text?.Tamil}
-              </p>
-            </div>
-            {obj[index].id === 200 ? (
-              <div className="lang-btn">
-                <button className="eng-btn" onClick={handleLanguageToggle}>
-                  {obj[index].lang1}
-                </button>
-                <button className="tam-btn" onClick={handleLanguageToggle}>
-                  {obj[index].lang2}
-                </button>
-              </div>
-            ) : obj[index].id === 208 ? (
-              <div>
-                <h4 className="count">
-                  {selectedLanguage === "English"
-                    ? obj[index].textWord?.English
-                    : obj[index].textWord.Tamil}
-                </h4>
-              </div>
-            ) : (
-              <div className="count">
-                <h4>{count}</h4>
-              </div>
-            )}
-            <div>
-              <div className="home-buttons">
-                {index === obj.length - 1 ? (
-                  <>
-                    <button onClick={handleRestart}>
-                      {selectedLanguage === "English"
-                        ? "Restart"
-                        : "மீண்டும் தொடங்க"}
-                    </button>
-                    <button className="exit" onClick={handleExit}>
-                      {selectedLanguage === "English" ? "Exit" : "வெளியேறு"}
-                    </button>
-                  </>
-                ) : index === 0 ? (
-                  <button onClick={handleStart}>
-                    {selectedLanguage === "English" ? "Start" : "தொடக்கம்"}
-                  </button>
-                ) : (
-                  <>
-                    <button onClick={handleBack}>
-                      {selectedLanguage === "English" ? "Back" : "பின் செல்ல"}
-                    </button>
-                    <button onClick={handlePause}>
-                      {paused
-                        ? selectedLanguage === "English"
-                          ? "Continue"
-                          : "தொடர்க"
-                        : selectedLanguage === "English"
-                        ? "Pause"
-                        : "இடைநிறுத்து"}
-                    </button>
-                    <button className="exit" onClick={handleExit}>
-                      {selectedLanguage === "English" ? "Exit" : "வெளியேறு"}
-                    </button>
-                  </>
-                )}
-              </div>
-            </div>
+        <div className="d-flex flex-column align-items-center justify-content-between vh-100">
+          <div className="container-text p-4">
+            {/* heading */}
+            <h1 className="heading text-center">
+              {selectedLanguage === "English"
+                ? obj[index].header?.English
+                : obj[index].header?.Tamil}
+            </h1>
+            {/* paragraph */}
+            <p className="paragraph text-center mt-4">
+              {selectedLanguage === "English"
+                ? obj[index].text?.English
+                : obj[index].text?.Tamil}
+            </p>
           </div>
+          {obj[index].id === 200 ? (
+            <div>
+              <button onClick={handleLanguageToggle}>{obj[index].lang1}</button>
+              <button onClick={handleLanguageToggle}>{obj[index].lang2}</button>
+            </div>
+          ) : obj[index].id === 208 ? (
+            <div>
+              <h6 className="counter">
+                {selectedLanguage === "English"
+                  ? obj[index].textWord?.English
+                  : obj[index].textWord.Tamil}
+              </h6>
+            </div>
+          ) : (
+            <div>
+              <h6 className="counter">{count}</h6>
+            </div>
+          )}
+
+          {index === obj.length - 1 ? (
+            <>
+              <button onClick={handleRestart}>
+                {selectedLanguage === "English" ? "Restart" : "மீண்டும் தொடங்க"}
+              </button>
+              <button onClick={handleExit}>
+                {selectedLanguage === "English" ? "Exit" : "வெளியேறு"}
+              </button>
+            </>
+          ) : index === 0 ? (
+            <button onClick={handleStart}>
+              {selectedLanguage === "English" ? "Start" : "தொடக்கம்"}
+            </button>
+          ) : (
+            <div className="d-flex justify-content-between vw-100">
+              <button
+                className="btn btn-dark bg-black btn-hover-blue btn-back"
+                onClick={handleBack}
+              >
+                <FontAwesomeIcon icon={faBackward} />
+              </button>
+              <button
+                className="btn btn-dark bg-black btn-hover-blue btn-continue"
+                onClick={handlePause}
+              >
+                {paused
+                  ? selectedLanguage === "English"
+                    ? "Continue"
+                    : "தொடர்க"
+                  : selectedLanguage === "English"
+                  ? "Pause"
+                  : "இடைநிறுத்து"}
+              </button>
+              <button className="exit btn btn btn-danger" onClick={handleExit}>
+                {selectedLanguage === "English" ? "Exit" : "வெளியேறு"}
+              </button>
+            </div>
+          )}
         </div>
       )}
       {showDuration && (
