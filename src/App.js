@@ -166,7 +166,7 @@ function App() {
             </div>
           ) : index === 0 ? (
             <button
-              className="btn btn-lg btn-primary start-btn p-3"
+              className="btn btn-lg btn-primary start-btn p-2"
               onClick={handleStart}
             >
               {selectedLanguage === "English" ? "Start" : "தொடக்கம்"}
@@ -210,7 +210,7 @@ function App() {
           >
             <div className="modal-dialog modal-dialog-centered">
               <div className="modal-content">
-                <div className="modal-body">
+                <div className="modal-body popup-content">
                   {selectedLanguage === "English"
                     ? '[Jesus] said... "So were you not able to watch with Me for ' +
                       remainingMinutesText +
@@ -223,7 +223,7 @@ function App() {
                   <button
                     type="button"
                     onClick={handleResume}
-                    className="btn btn-light btn-lg px-4 p-2"
+                    className="btn btn-light btn-lg px-4 border-0 rounded-0 p-2"
                     data-bs-dismiss="modal"
                   >
                     {selectedLanguage === "English" ? "Resume" : "தொடர்க"}
@@ -231,7 +231,7 @@ function App() {
                   <button
                     type="button"
                     onClick={handleExitAnyway}
-                    className="btn btn-light btn-lg"
+                    className="btn btn-light btn-lg border-0 rounded-0"
                   >
                     {selectedLanguage === "English"
                       ? "Exit anyway"
