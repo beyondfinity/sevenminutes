@@ -12,6 +12,7 @@
   border-radius: 1 !important;
   border-color: rgb(22, 22, 82) !important;
   border-width: 3px !important;
+  margin-bottom: 4% !important;
 }
 .btn-hover-blue:hover {
   background-color: rgb(22, 22, 82) !important;
@@ -67,6 +68,13 @@
   background-color: rgba(94, 71, 94, 0.877);
   border: none !important;
 }
+.start-btn {
+  width: 20% !important;
+  font-size: xx-large;
+}
+.start-btn:hover {
+  background-color: navy !important;
+}
 /* -------------------------------------------------- */
 .restart-btn {
   background-color: rgb(22, 22, 82) !important;
@@ -107,6 +115,9 @@
   .lang-toggle {
     width: 60% !important;
   }
+  .start-btn {
+    width: 50% !important;
+  }
   .restart-btn {
     padding-inline: 15% !important;
     font-size: x-large !important;
@@ -140,6 +151,10 @@
   }
   .lang-toggle {
     width: 50% !important;
+  }
+  .start-btn {
+    width: 40% !important;
+    font-size: x-large !important;
   }
   .lang-btn {
     padding: 4% !important;
@@ -175,6 +190,10 @@
   }
   .lang-toggle {
     width: 50% !important;
+  }
+  .start-btn {
+    width: 40% !important;
+    font-size: xx-large !important;
   }
   .lang-btn {
     padding: 4% !important;

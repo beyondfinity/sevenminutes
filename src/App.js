@@ -165,7 +165,10 @@ function App() {
               </button>
             </div>
           ) : index === 0 ? (
-            <button onClick={handleStart}>
+            <button
+              className="btn btn-lg btn-primary start-btn p-3"
+              onClick={handleStart}
+            >
               {selectedLanguage === "English" ? "Start" : "தொடக்கம்"}
             </button>
           ) : (
@@ -220,7 +223,7 @@ function App() {
                   <button
                     type="button"
                     onClick={handleResume}
-                    className=" resume btn btn-light"
+                    className="btn btn-light btn-lg px-4 p-2"
                     data-bs-dismiss="modal"
                   >
                     {selectedLanguage === "English" ? "Resume" : "தொடர்க"}
@@ -228,7 +231,7 @@ function App() {
                   <button
                     type="button"
                     onClick={handleExitAnyway}
-                    className="btn btn-light"
+                    className="btn btn-light btn-lg"
                   >
                     {selectedLanguage === "English"
                       ? "Exit anyway"
