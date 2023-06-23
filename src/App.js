@@ -84,13 +84,14 @@ function App() {
     setShowDuration(false);
     setPaused(false);
   };
+  const handleExitAnyway = () => {
+    window.close(); // Close the tab/window
+  };
   const handleRestart = () => {
     setIndex(0); // Reset the index to 0
     setCount(obj[0]?.counter); //Reset the count to 0
   };
-  const handleExitAnyway = () => {
-    window.close(); // Close the tab/window
-  };
+
   const handleStart = () => {
     if (index === 0) {
       setPaused(false); // Set paused to false
@@ -122,33 +123,47 @@ function App() {
             </p>
           </div>
           {obj[index].id === 200 ? (
-            <div>
-              <button onClick={handleLanguageToggle}>{obj[index].lang1}</button>
-              <button onClick={handleLanguageToggle}>{obj[index].lang2}</button>
+            <div className="lang-toggle d-flex flex-column gap-4">
+              <button
+                className="lang-btn btn btn-primary p-2 primary"
+                onClick={handleLanguageToggle}
+              >
+                {obj[index].lang1}
+              </button>
+              <button
+                className=" lang-btn btn btn-secondary p-2 secondary"
+                onClick={handleLanguageToggle}
+              >
+                {obj[index].lang2}
+              </button>
             </div>
           ) : obj[index].id === 208 ? (
             <div>
-              <h6 className="counter">
+              <h1 className="counter">
                 {selectedLanguage === "English"
                   ? obj[index].textWord?.English
                   : obj[index].textWord.Tamil}
-              </h6>
+              </h1>
             </div>
           ) : (
-            <div>
-              <h6 className="counter">{count}</h6>
-            </div>
+            <h1 className="counter">{count}</h1>
           )}
 
           {index === obj.length - 1 ? (
-            <>
-              <button onClick={handleRestart}>
+            <div className="d-flex justify-content-around gap-5">
+              <button
+                className="btn btn-primary btn-lg restart-btn"
+                onClick={handleRestart}
+              >
                 {selectedLanguage === "English" ? "Restart" : "மீண்டும் தொடங்க"}
               </button>
-              <button onClick={handleExit}>
+              <button
+                className="exit btn btn btn-danger"
+                onClick={handleExitAnyway}
+              >
                 {selectedLanguage === "English" ? "Exit" : "வெளியேறு"}
               </button>
-            </>
+            </div>
           ) : index === 0 ? (
             <button onClick={handleStart}>
               {selectedLanguage === "English" ? "Start" : "தொடக்கம்"}
@@ -173,34 +188,48 @@ function App() {
                   ? "Pause"
                   : "இடைநிறுத்து"}
               </button>
-              <button className="exit btn btn btn-danger" onClick={handleExit}>
+              <button
+                className="exit btn btn btn-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                onClick={handleExit}
+              >
                 {selectedLanguage === "English" ? "Exit" : "வெளியேறு"}
               </button>
             </div>
           )}
-        </div>
-      )}
-      {showDuration && (
-        <div className="overlay">
-          <div className="container">
-            <div>
-              <p>
-                {selectedLanguage === "English"
-                  ? '[Jesus] said... "So were you not able to watch with Me for ' +
-                    remainingMinutesText +
-                    ' more minutes]? Watch and pray that you may not enter into temptation. The spirit is willing, but the flesh is weak." (Matt. 26:40b-41)'
-                  : 'இயேசு கூறினதாவது "உங்களால் [' +
-                    remainingMinutesText +
-                    ' நிமிடங்கள்] என்னோடுகூட விழிப்பாயிருக்க முடியவில்லையா? நீங்கள் சோதனைக்குள்ளாகாதபடி விழிப்பாயிருந்து ஜெபம்பண்ணுங்கள். ஆவி சித்தமாயிருக்கிறது. ஆனால் மாம்சம் பலவீனமாயிருக்கிறது" (மத். 26:40-41)'}
-              </p>
-            </div>
-            <div>
-              <div className="exitbg">
-                <div className="buttons">
-                  <button onClick={handleResume}>
+          <div
+            className="modal"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-body">
+                  {selectedLanguage === "English"
+                    ? '[Jesus] said... "So were you not able to watch with Me for ' +
+                      remainingMinutesText +
+                      ' more minutes]? Watch and pray that you may not enter into temptation. The spirit is willing, but the flesh is weak." (Matt. 26:40b-41)'
+                    : 'இயேசு கூறினதாவது "உங்களால் [' +
+                      remainingMinutesText +
+                      ' நிமிடங்கள்] என்னோடுகூட விழிப்பாயிருக்க முடியவில்லையா? நீங்கள் சோதனைக்குள்ளாகாதபடி விழிப்பாயிருந்து ஜெபம்பண்ணுங்கள். ஆவி சித்தமாயிருக்கிறது. ஆனால் மாம்சம் பலவீனமாயிருக்கிறது" (மத். 26:40-41)'}
+                </div>
+                <div className="modal-footer d-flex justify-content-around">
+                  <button
+                    type="button"
+                    onClick={handleResume}
+                    className=" resume btn btn-light"
+                    data-bs-dismiss="modal"
+                  >
                     {selectedLanguage === "English" ? "Resume" : "தொடர்க"}
                   </button>
-                  <button onClick={handleExitAnyway}>
+                  <button
+                    type="button"
+                    onClick={handleExitAnyway}
+                    className="btn btn-light"
+                  >
                     {selectedLanguage === "English"
                       ? "Exit anyway"
                       : "மேலும் வெளியேறுக"}
@@ -211,6 +240,7 @@ function App() {
           </div>
         </div>
       )}
+      {showDuration}
     </div>
   );
 }
