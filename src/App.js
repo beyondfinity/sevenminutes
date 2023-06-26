@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import datas from "./Utilis";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBackward } from "@fortawesome/free-solid-svg-icons";
+import soundfile from "./soundfile/audio.mp3";
 
 let obj = datas;
 
@@ -13,6 +14,7 @@ function App() {
   const [selectedLanguage, setSelectedLanguage] = useState("English");
 
   const [count, setCount] = useState(obj[index]?.counter);
+
 
   useEffect(() => {
     let counterInterval;
@@ -35,6 +37,20 @@ function App() {
       clearInterval(counterInterval);
     };
   }, [index, obj, paused]);
+  useEffect(() => {
+    if (count === undefined && index >= 1 && index <= 7) {
+    const audioElement = new Audio(obj[1].soundfile);
+    audioElement.play().catch((error) => {
+      console.log(error);
+    });
+
+    return () => {
+      audioElement.pause();
+      audioElement.currentTime = 0;
+    }
+  }
+  }, [count, index]);
+
 
   const handlePause = () => {
     setPaused((prevPaused) => !prevPaused);
@@ -106,8 +122,11 @@ function App() {
 
   return (
     <div className="App">
+     
+
       {obj[index] && (
         <div className="d-flex flex-column align-items-center justify-content-between vh-100">
+           <audio src={soundfile} autoPlay controls hidden />
           <div className="container-text m-3">
             {/* heading */}
             <h1 className="heading text-center">
