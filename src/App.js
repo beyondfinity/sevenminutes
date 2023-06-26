@@ -108,7 +108,7 @@ function App() {
     <div className="App">
       {obj[index] && (
         <div className="d-flex flex-column align-items-center justify-content-between vh-100">
-          <div className="container-text p-4">
+          <div className="container-text m-3">
             {/* heading */}
             <h1 className="heading text-center">
               {selectedLanguage === "English"
@@ -150,15 +150,21 @@ function App() {
           )}
 
           {index === obj.length - 1 ? (
-            <div className="d-flex justify-content-around gap-5">
+            <div className="d-flex justify-content-between vw-100">
               <button
-                className="btn btn-primary btn-lg restart-btn"
+                className={`btn btn-primary rounded-1 restart-btn ${
+                  selectedLanguage === "Tamil" ? "tamil-restart-btn" : ""
+                }`}
                 onClick={handleRestart}
               >
                 {selectedLanguage === "English" ? "Restart" : "மீண்டும் தொடங்க"}
               </button>
               <button
-                className="exit btn btn btn-danger"
+                className={`exit btn btn btn-danger  ${
+                  selectedLanguage === "Tamil"
+                    ? "tamil-exit-btn"
+                    : "eng-exit-btn"
+                }`}
                 onClick={handleExitAnyway}
               >
                 {selectedLanguage === "English" ? "Exit" : "வெளியேறு"}
@@ -166,10 +172,12 @@ function App() {
             </div>
           ) : index === 0 ? (
             <button
-              className="btn btn-lg btn-primary start-btn p-2"
+              className={`btn btn-lg btn-primary p-3 start-btn ${
+                selectedLanguage === "Tamil" ? "tamil-start-btn" : ""
+              }`}
               onClick={handleStart}
             >
-              {selectedLanguage === "English" ? "Start" : "தொடக்கம்"}
+              {selectedLanguage === "English" ? "START" : "தொடக்கம்"}
             </button>
           ) : (
             <div className="d-flex justify-content-between vw-100">
@@ -180,7 +188,9 @@ function App() {
                 <FontAwesomeIcon icon={faBackward} />
               </button>
               <button
-                className="btn btn-dark bg-black btn-hover-blue btn-continue"
+                className={`btn btn-dark bg-black btn-hover-blue eng-continue-btn ${
+                  selectedLanguage === "Tamil" ? "tamil-continue-btn" : ""
+                }`}
                 onClick={handlePause}
               >
                 {paused
@@ -192,7 +202,11 @@ function App() {
                   : "இடைநிறுத்து"}
               </button>
               <button
-                className="exit btn btn btn-danger"
+                className={`exit btn btn btn-danger ${
+                  selectedLanguage === "Tamil"
+                    ? "tamil-exit-btn"
+                    : "eng-exit-btn"
+                }`}
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
                 onClick={handleExit}
@@ -208,7 +222,7 @@ function App() {
             aria-labelledby="exampleModalLabel"
             aria-hidden="true"
           >
-            <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-dialog modal-dialog-centered popup-msg">
               <div className="modal-content">
                 <div className="modal-body popup-content">
                   {selectedLanguage === "English"
@@ -223,7 +237,9 @@ function App() {
                   <button
                     type="button"
                     onClick={handleResume}
-                    className="btn btn-light btn-lg px-4 border-0 rounded-0 p-2"
+                    className={`btn btn-light btn-lg  border-0 rounded-0 px-4 ${
+                      selectedLanguage === "Tamil" ? "tamil-resume-btn" : ""
+                    }`}
                     data-bs-dismiss="modal"
                   >
                     {selectedLanguage === "English" ? "Resume" : "தொடர்க"}

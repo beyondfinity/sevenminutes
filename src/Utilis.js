@@ -8,6 +8,7 @@ const datas = [
     lang1: "English",
     lang2: "Tamil",
     counter: 0,
+    
   },
   {
     id: 201,

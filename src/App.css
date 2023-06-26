@@ -5,6 +5,17 @@
 .modal-footer {
   background-color: rgb(122, 118, 118) !important;
 }
+.popup-content {
+  font-size: larger !important;
+}
+.modal-footer button {
+  font-size: larger !important;
+  width: fit-content !important;
+}
+.modal-footer .tamil-resume-btn {
+  padding-inline: 15% !important;
+}
+
 .modal-footer button:hover {
   background-color: orange !important;
 }
@@ -19,7 +30,7 @@
   border-radius: 1 !important;
   border-color: rgb(22, 22, 82) !important;
   border-width: 3px !important;
-  margin-bottom: 4% !important;
+  /* margin-bottom: 4% !important; */
 }
 .btn-hover-blue:hover {
   background-color: rgb(22, 22, 82) !important;
@@ -27,10 +38,6 @@
 .exit {
   background-color: red !important;
   color: black !important;
-  padding: 15px !important;
-  padding-inline: 100px !important;
-  margin-right: 20px !important;
-  font-size: 35px !important;
 }
 .exit:hover {
   background-color: orangered !important;
@@ -38,26 +45,49 @@
 }
 
 .heading {
-  font-size: 65px !important;
+  font-size: 300% !important;
+  font-weight: bold !important;
   color: rgb(18, 11, 59) !important;
 }
 .paragraph {
-  font-size: 45px !important;
+  font-size: xx-large !important;
+  padding-top: 2% !important;
   color: rgb(18, 11, 59) !important;
 }
 .btn-back {
-  padding: 10px !important;
-  padding-inline: 90px !important;
-  margin-left: 20px !important;
-  font-size: 40px !important;
+  padding-inline: 7% !important;
+
+  margin-left: 1% !important;
+  font-size: 250% !important;
+  margin-bottom: 1% !important;
 }
-.btn-continue {
-  padding-inline: 80px !important;
-  font-size: 40px !important;
+.eng-continue-btn {
+  padding-inline: 15% !important;
+
+  font-size: xx-large !important;
+  margin-bottom: 1% !important;
+}
+.tamil-continue-btn {
+  padding-inline: 15% !important;
+  font-size: xx-large !important;
+  margin-bottom: 1% !important;
+}
+.tamil-exit-btn {
+  margin-right: 1% !important;
+  font-size: xx-large !important;
+  padding: 1% !important;
+  margin-bottom: 1% !important;
+}
+.eng-exit-btn {
+  margin-right: 1% !important;
+  width: fit-content !important;
+  padding-inline: 5% !important;
+  font-size: xx-large !important;
+  margin-bottom: 1% !important;
 }
 .counter {
-  font-size: 100px !important;
-  font-weight: normal !important;
+  font-size: 450% !important;
+  font-weight: 390 !important;
   color: rgb(7, 2, 36) !important;
 }
 .lang-toggle {
@@ -85,79 +115,167 @@
 /* -------------------------------------------------- */
 .restart-btn {
   background-color: rgb(22, 22, 82) !important;
-  padding-inline: 50% !important;
+  /* padding-inline: 50% !important; */
   font-size: xx-large !important;
+  padding: 2% !important;
+  width: 40% !important;
+  margin-left: 2% !important;
+  margin-bottom: 1% !important;
 }
 .restart-btn:hover {
   background-color: teal !important;
 }
 
+.tamil-restart-btn {
+  font-size: xx-large !important;
+  width: 60% !important;
+  text-align: center !important;
+  padding: 3% !important;
+  gap: 3 !important;
+}
+
 /* Mobile devices */
 @media screen and (max-width: 576px) {
   .paragraph {
-    font-size: 22px !important;
+    font-size: large !important;
   }
   .heading {
-    font-size: 30px !important;
+    font-size: x-large !important;
+    font-weight: bold !important;
   }
   .counter {
-    font-size: 50px !important;
+    font-size: 250% !important;
+    font-weight: 400 !important;
   }
   .btn-back {
-    padding: 10px !important;
-    padding-inline: 24px !important;
-    margin-left: 10px !important;
-    font-size: 24px !important;
+    padding-inline: 6% !important;
+    margin-left: 1% !important;
+    font-size: medium !important;
+    margin-bottom: 1% !important;
   }
-  .btn-continue {
-    padding-inline: 35px !important;
-    font-size: 22px !important;
+  .eng-continue-btn {
+    padding-inline: 15% !important;
+    font-size: medium !important;
+    margin-bottom: 1% !important;
   }
-  .exit {
-    padding: 10px !important;
-    margin-right: 10px !important;
-    font-size: 20px !important;
-    padding-inline: 18px !important;
+  .tamil-continue-btn {
+    padding-inline: 7% !important;
+    font-size: medium !important;
+    margin-bottom: 1% !important;
+  }
+  .tamil-exit-btn {
+    margin-right: 1% !important;
+    font-size: small !important;
+    padding: 0% !important;
+    margin-bottom: 1% !important;
+  }
+  .eng-exit-btn {
+    margin-right: 1% !important;
+    width: fit-content !important;
+    padding-inline: 5% !important;
+    font-size: medium !important;
+    margin-bottom: 1% !important;
   }
   .lang-toggle {
     width: 60% !important;
   }
   .start-btn {
-    width: 50% !important;
+    font-size: medium !important;
+    width: 30% !important;
+    margin-bottom: 5% !important;
+  }
+  .tamil-start-btn {
+    width: 40% !important;
+    font-size: larger !important;
+    padding: 2% !important  ;
+    margin-bottom: 5% !important;
   }
   .restart-btn {
-    padding-inline: 15% !important;
-    font-size: x-large !important;
+    font-size: medium !important;
+    padding: 6% !important;
+    width: 70% !important;
+    margin-left: 2% !important;
+    margin-bottom: 1% !important;
+  }
+  .tamil-restart-btn {
+    font-size: medium !important;
+    width: 60% !important;
+    text-align: center !important;
+    padding: 3% !important;
+    gap: 3 !important;
   }
   .popup-content {
-    font-size: large !important;
+    font-size: small !important;
+    height: fit-content !important;
+  }
+  .modal-footer button {
+    font-size: small !important;
+    width: fit-content !important;
+  }
+  .modal-footer .tamil-resume-btn {
+    padding-inline: 10% !important;
+  }
+  .tamil-exit-btn {
+    padding: 1% !important;
+    font-size: medium !important;
   }
 }
 /* tablets  */
 @media screen and (min-width: 576px) and (max-width: 768px) {
   .paragraph {
-    font-size: 25px !important;
+    font-size: x-large !important;
+    padding-top: 2% !important;
   }
   .heading {
-    font-size: 55px !important;
+    font-size: xx-large !important;
+    font-weight: bold !important;
   }
   .counter {
-    font-size: 85px !important;
+    font-size: 350% !important;
+    font-weight: 400 !important;
   }
   .btn-back {
-    padding: 20px !important;
-    padding-inline: 35px !important;
-    margin-left: 10px !important;
-    font-size: 30px !important;
+    padding-inline: 7% !important;
+    margin-left: 1% !important;
+    font-size: x-large !important;
+    margin-bottom: 1% !important;
   }
-  .btn-continue {
-    padding-inline: 65px !important;
-    font-size: 25px !important;
+  .eng-continue-btn {
+    padding-inline: 15% !important;
+    font-size: x-large !important;
+    margin-bottom: 1% !important;
   }
-  .exit {
-    padding: 20px !important;
-    margin-right: 10px !important;
-    font-size: 25px !important;
+  .tamil-continue-btn {
+    padding-inline: 15% !important;
+    font-size: larger !important;
+    margin-bottom: 1% !important;
+  }
+  .tamil-exit-btn {
+    margin-right: 1% !important;
+    font-size: larger !important;
+    padding: 3% !important;
+    margin-bottom: 1% !important;
+  }
+  .eng-exit-btn {
+    margin-right: 1% !important;
+    width: fit-content !important;
+    padding-inline: 5% !important;
+    font-size: x-large !important;
+    margin-bottom: 1% !important;
+  }
+  .restart-btn {
+    font-size: x-large !important;
+    padding: 3% !important;
+    width: 50% !important;
+    margin-left: 2% !important;
+    margin-bottom: 1% !important;
+  }
+  .tamil-restart-btn {
+    font-size: x-large !important;
+    width: 60% !important;
+    text-align: center !important;
+    padding: 3% !important;
+    gap: 3 !important;
   }
   .lang-toggle {
     width: 50% !important;
@@ -167,52 +285,96 @@
     font-size: x-large !important;
   }
   .lang-btn {
-    padding: 4% !important;
-    font-size: medium !important;
+    padding: 2% !important;
+    font-size: x-large !important;
   }
   .popup-content {
     font-size: large !important;
+  }
+  .modal-footer button {
+    font-size: large !important;
+    width: fit-content !important;
+  }
+  .modal-footer .tamil-resume-btn {
+    padding-inline: 15% !important;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .paragraph {
-    font-size: 37px !important;
+    font-size: xx-large !important;
+    padding-top: 2% !important;
   }
   .heading {
-    font-size: 60px !important;
+    font-size: 230% !important;
+    font-weight: bold !important;
   }
   .counter {
-    font-size: 80px !important;
+    font-size: 400% !important;
+    font-weight: 370 !important;
   }
   .btn-back {
-    padding: 16px !important;
-    padding-inline: 50px !important;
-    margin-left: 10px !important;
-    font-size: 40px !important;
+    padding-inline: 7% !important;
+    margin-left: 1% !important;
+    font-size: xx-large !important;
+    margin-bottom: 1% !important;
   }
-  .btn-continue {
-    padding-inline: 140px !important;
-    font-size: 35px !important;
+  .eng-continue-btn {
+    padding-inline: 15% !important;
+    font-size: xx-large !important;
+    margin-bottom: 1% !important;
   }
-  .exit {
-    padding: 10px !important;
-    margin-right: 10px !important;
-    font-size: 30px !important;
-    padding-inline: 40px !important;
+  .tamil-continue-btn {
+    padding-inline: 15% !important;
+    font-size: x-large !important;
+    margin-bottom: 1% !important;
+  }
+  .tamil-exit-btn {
+    margin-right: 1% !important;
+    font-size: x-large !important;
+    padding: 2% !important;
+    margin-bottom: 1% !important;
+  }
+  .eng-exit-btn {
+    margin-right: 1% !important;
+    width: fit-content !important;
+    padding-inline: 5% !important;
+    font-size: xx-large !important;
+    margin-bottom: 1% !important;
+  }
+  .restart-btn {
+    font-size: xx-large !important;
+    padding: 3% !important;
+    width: 50% !important;
+    margin-left: 2% !important;
+    margin-bottom: 1% !important;
+  }
+  .tamil-restart-btn {
+    font-size: xx-large !important;
+    width: 60% !important;
+    text-align: center !important;
+    padding: 3% !important;
+    gap: 3 !important;
   }
   .lang-toggle {
     width: 50% !important;
   }
   .start-btn {
     width: 40% !important;
-    font-size: x-large !important;
+    font-size: xx-large !important;
   }
   .lang-btn {
-    padding: 4% !important;
-    font-size: x-large;
+    padding: 3% !important;
+    font-size: xx-large !important;
   }
   .popup-content {
-    font-size: x-large !important;
+    font-size: larger !important;
+  }
+  .modal-footer button {
+    font-size: larger !important;
+    width: fit-content !important;
+  }
+  .modal-footer .tamil-resume-btn {
+    padding-inline: 15% !important;
   }
 }
