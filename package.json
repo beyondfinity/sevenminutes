@@ -1,6 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
+  "homepage": "https://Poojalaksh2002.github.io/app_prayer/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
@@ -26,7 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b UI_changes -d build",
+    "deploy": "gh-pages -d build -b main",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
