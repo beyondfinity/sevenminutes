@@ -108,7 +108,8 @@ function App() {
     setCount(obj[0]?.counter); //Reset the count to 0
   };
 
-  const handleStart = () => {
+  const handleLanguageToggle = (e) => {
+    setSelectedLanguage(e.target.textContent);
     if (index === 0) {
       setPaused(false); // Set paused to false
       setShowDuration(false); // Hide the duration overlay
@@ -116,15 +117,10 @@ function App() {
       setCount(obj[1]?.counter); // Set the count to the next object's counter
     }
   };
-  const handleLanguageToggle = (e) => {
-    setSelectedLanguage(e.target.textContent);
-  };
 
   return (
     <div className="App">
-     
-
-      {obj[index] && (
+           {obj[index] && (
         <div className="d-flex flex-column align-items-center justify-content-between vh-100">
            <audio src={soundfile} autoPlay controls hidden />
           <div className="container-text m-3">
@@ -134,29 +130,31 @@ function App() {
                 ? obj[index].header?.English
                 : obj[index].header?.Tamil}
             </h1>
-            {/* paragraph */}
-            <p className="paragraph text-center mt-4">
-              {selectedLanguage === "English"
-                ? obj[index].text?.English
-                : obj[index].text?.Tamil}
-            </p>
-          </div>
-          {obj[index].id === 200 ? (
-            <div className="lang-toggle d-flex flex-column gap-4">
+          
+            {obj[index].id === 200 ? (
+            <div className="lang-toggle d-flex flex-column align-items-center gap-4 vh-100 ">
               <button
-                className="lang-btn btn btn-primary p-2 primary"
+                className="lang-btn btn btn-primary primary-lang"
                 onClick={handleLanguageToggle}
               >
                 {obj[index].lang1}
               </button>
               <button
-                className=" lang-btn btn btn-secondary p-2 secondary"
+                className="lang-btn btn btn-secondary btn-large p-6  secondary-lang"
                 onClick={handleLanguageToggle}
               >
                 {obj[index].lang2}
               </button>
-            </div>
-          ) : obj[index].id === 208 ? (
+            </div>               
+          ):
+            <p className="paragraph text-center mt-4">
+              {selectedLanguage === "English"
+                ? obj[index].text?.English
+                : obj[index].text?.Tamil}
+            </p>
+            }
+          </div>
+         { obj[index].id === 208 ? (
             <div>
               <h1 className="counter">
                 {selectedLanguage === "English"
@@ -164,9 +162,11 @@ function App() {
                   : obj[index].textWord.Tamil}
               </h1>
             </div>
-          ) : (
-            <h1 className="counter">{count}</h1>
-          )}
+          ) :obj[index].id ===200 ?(
+            <>
+            </>
+          ):<h1 className="counter">{count}</h1>
+          }
 
           {index === obj.length - 1 ? (
             <div className="d-flex justify-content-between vw-100">
@@ -190,14 +190,7 @@ function App() {
               </button>
             </div>
           ) : index === 0 ? (
-            <button
-              className={`btn btn-lg btn-primary p-3 start-btn ${
-                selectedLanguage === "Tamil" ? "tamil-start-btn" : ""
-              }`}
-              onClick={handleStart}
-            >
-              {selectedLanguage === "English" ? "START" : "தொடக்கம்"}
-            </button>
+           <></>
           ) : (
             <div className="d-flex justify-content-between vw-100">
               <button
