@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import datas from "./Utilis";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBackward } from "@fortawesome/free-solid-svg-icons";
-import soundfile from "./soundfile/audio.mp3";
+// import soundfile from "./soundfile/audio.mp3";
 
 let obj = datas;
 
@@ -14,7 +14,6 @@ function App() {
   const [selectedLanguage, setSelectedLanguage] = useState("English");
 
   const [count, setCount] = useState(obj[index]?.counter);
-
 
   useEffect(() => {
     let counterInterval;
@@ -37,20 +36,20 @@ function App() {
       clearInterval(counterInterval);
     };
   }, [index, obj, paused]);
+
   useEffect(() => {
     if (count === undefined && index >= 1 && index <= 7) {
-    const audioElement = new Audio(obj[1].soundfile);
-    audioElement.play().catch((error) => {
-      console.log(error);
-    });
+      const audioElement = new Audio(obj[1].soundfile);
+      audioElement.play().catch((error) => {
+        console.log(error);
+      });
 
-    return () => {
-      audioElement.pause();
-      audioElement.currentTime = 0;
+      return () => {
+        audioElement.pause();
+        audioElement.currentTime = 0;
+      };
     }
-  }
   }, [count, index]);
-
 
   const handlePause = () => {
     setPaused((prevPaused) => !prevPaused);
@@ -120,9 +119,9 @@ function App() {
 
   return (
     <div className="App">
-           {obj[index] && (
+      {obj[index] && (
         <div className="d-flex flex-column align-items-center justify-content-between vh-100">
-           <audio src={soundfile} autoPlay controls hidden />
+          {/* <audio src={soundfile} autoPlay controls hidden /> */}
           <div className="container-text m-3">
             {/* heading */}
             <h1 className="heading text-center">
@@ -130,31 +129,31 @@ function App() {
                 ? obj[index].header?.English
                 : obj[index].header?.Tamil}
             </h1>
-          
+
             {obj[index].id === 200 ? (
-            <div className="lang-toggle d-flex flex-column align-items-center gap-4 vh-100 ">
-              <button
-                className="lang-btn btn btn-primary primary-lang"
-                onClick={handleLanguageToggle}
-              >
-                {obj[index].lang1}
-              </button>
-              <button
-                className="lang-btn btn btn-secondary btn-large p-6  secondary-lang"
-                onClick={handleLanguageToggle}
-              >
-                {obj[index].lang2}
-              </button>
-            </div>               
-          ):
-            <p className="paragraph text-center mt-4">
-              {selectedLanguage === "English"
-                ? obj[index].text?.English
-                : obj[index].text?.Tamil}
-            </p>
-            }
+              <div className="lang-toggle d-flex flex-column align-items-center gap-4 vh-100 ">
+                <button
+                  className="lang-btn btn btn-primary primary-lang"
+                  onClick={handleLanguageToggle}
+                >
+                  {obj[index].lang1}
+                </button>
+                <button
+                  className="lang-btn btn btn-secondary btn-large p-6  secondary-lang"
+                  onClick={handleLanguageToggle}
+                >
+                  {obj[index].lang2}
+                </button>
+              </div>
+            ) : (
+              <p className="paragraph text-center mt-4">
+                {selectedLanguage === "English"
+                  ? obj[index].text?.English
+                  : obj[index].text?.Tamil}
+              </p>
+            )}
           </div>
-         { obj[index].id === 208 ? (
+          {obj[index].id === 208 ? (
             <div>
               <h1 className="counter">
                 {selectedLanguage === "English"
@@ -162,11 +161,11 @@ function App() {
                   : obj[index].textWord.Tamil}
               </h1>
             </div>
-          ) :obj[index].id ===200 ?(
-            <>
-            </>
-          ):<h1 className="counter">{count}</h1>
-          }
+          ) : obj[index].id === 200 ? (
+            <></>
+          ) : (
+            <h1 className="counter">{count}</h1>
+          )}
 
           {index === obj.length - 1 ? (
             <div className="d-flex justify-content-between vw-100">
@@ -190,7 +189,7 @@ function App() {
               </button>
             </div>
           ) : index === 0 ? (
-           <></>
+            <></>
           ) : (
             <div className="d-flex justify-content-between vw-100">
               <button

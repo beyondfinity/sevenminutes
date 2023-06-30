@@ -16,6 +16,7 @@ if ("serviceWorker" in navigator) {
           "Service Worker registered with scope:",
           registration.scope
         );
+        console.log(registration.active.state);
       })
       .catch((error) => {
         console.log("Service Worker registration failed:", error);
