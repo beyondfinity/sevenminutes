@@ -34,45 +34,58 @@ self.addEventListener("activate", (e) => {
     })
   );
 });
-
 self.addEventListener("fetch", (event) => {
-  console.log("Service Worker: Fetching");
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      // Return the cached response if found
-      if (response) {
-        return response;
-      }
+    fetch(event.request)
+      .then((response) => {
+        // Check if the response is a partial response (status code 206)
+        if (response.status === 206) {
+          // Handle partial response appropriately
+          return response;
+        }
 
-      // If the request is not cached, fetch it from the network
-      return fetch(event.request)
-        .then((networkResponse) => {
-          // Cache the fetched response for future use
-          if (networkResponse.ok) {
-            const clonedResponse = networkResponse.clone();
-            caches.open(cacheKey).then((cache) => {
-              cache.put(event.request, clonedResponse);
-            });
-          }
-
-          return networkResponse;
-        })
-        .catch(() => {
-          return new Response("<h1>You are offline</h1>", {
-            headers: { "Content-Type": "text/html" },
-          });
+        // Perform cache operation for non-partial responses
+        const clonedResponse = response.clone();
+        caches.open("cacheKey").then((cache) => {
+          cache.put(event.request, clonedResponse);
         });
-    })
+
+        return response;
+      })
+      .catch((error) => {
+        // Handle fetch errors
+        console.log("Fetch error:", error);
+      })
   );
 });
 
-// self.addEventListener("fetch", (e) => {
+// self.addEventListener("fetch", (event) => {
 //   console.log("Service Worker: Fetching");
-//   e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
-// });
+//   event.respondWith(
+//     caches.match(event.request).then((response) => {
+//       // Return the cached response if found
+//       if (response) {
+//         return response;
+//       }
 
-// caches.open(cacheKey).then((cache) => {
-//   cache.keys().then((cachedRequests) => {
-//     console.log(cachedRequests);
-//   });
-// });
+//       // If the request is not cached, fetch it from the network
+//       return fetch(event.request)
+//         .then((networkResponse) => {
+//           // Cache the fetched response for future use
+//           if (networkResponse.ok) {
+//             const clonedResponse = networkResponse.clone();
+//             caches.open(cacheKey).then((cache) => {
+//               cache.put(event.request, clonedResponse);
+//             });
+//           }
+
+//           return networkResponse;
+//         })
+//         .catch(() => {
+//           return new Response("<h1>You are offline</h1>", {
+//             headers: { "Content-Type": "text/html" },
+//           });
+//         });
+//     })
+//   );
+// })
