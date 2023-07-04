@@ -30,6 +30,7 @@
   border-radius: 1 !important;
   border-color: rgb(22, 22, 82) !important;
   border-width: 3px !important;
+
   /* margin-bottom: 4% !important; */
 }
 .btn-hover-blue:hover {
@@ -56,7 +57,6 @@
 }
 .btn-back {
   padding-inline: 7% !important;
-
   margin-left: 1% !important;
   font-size: 250% !important;
   margin-bottom: 1% !important;
@@ -90,15 +90,10 @@
   font-weight: 390 !important;
   color: rgb(7, 2, 36) !important;
 }
-/* .lang-toggle {
-  margin-top: 10% !important;
-  
-} */
+
 .lang-btn {
   font-size: x-large !important;
   padding: 2% !important;
-
-  /* padding-inline: 10% !important; */
 }
 .primary-lang {
   background-color: teal;
@@ -112,7 +107,6 @@
   border: none !important;
   width: 80% !important;
   font-size: xx-large !important;
-
 }
 .start-btn {
   width: 20% !important;
@@ -158,6 +152,7 @@
   }
   .btn-back {
     padding-inline: 6% !important;
+
     margin-left: 1% !important;
     font-size: medium !important;
     margin-bottom: 1% !important;
@@ -185,18 +180,15 @@
     font-size: medium !important;
     margin-bottom: 1% !important;
   }
-  
-  
+
   .primary-lang {
     margin-top: 50% !important;
     width: 80% !important;
     font-size: larger !important;
-
   }
   .secondary-lang {
     width: 80% !important;
     font-size: larger !important;
-
   }
   .start-btn {
     font-size: medium !important;
@@ -296,10 +288,7 @@
     padding: 3% !important;
     gap: 3 !important;
   }
-  /* .lang-toggle {
-    width: 50% !important;
 
-  } */
   .primary-lang {
     margin-top: 50% !important;
     width: 90% !important;
@@ -308,7 +297,6 @@
   .secondary-lang {
     width: 90% !important;
     font-size: medium !important;
-
   }
   .start-btn {
     width: 40% !important;
@@ -397,7 +385,6 @@
   .secondary-lang {
     width: 100% !important;
     font-size: medium !important;
-
   }
   .start-btn {
     width: 40% !important;

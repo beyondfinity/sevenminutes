@@ -1,14 +1,14 @@
+import soundfile from "./soundfile/audio.mp3";
 const datas = [
   {
     id: 200,
     header: {
-      English: `7 Minutes With The Lord,`,
+      English: `7 Minutes With The Lord`,
       Tamil: `கர்த்தருடன் 7 நிமிடங்கள்`,
     },
     lang1: "English",
     lang2: "Tamil",
     counter: 0,
-    
   },
   {
     id: 201,
@@ -24,6 +24,7 @@ const datas = [
         1 கொரி. 12:3, ரோ. 8:6; 10:12-13`,
     },
     counter: 3,
+    audio: soundfile,
   },
   {
     id: 202,
@@ -39,6 +40,7 @@ const datas = [
     },
 
     counter: 5,
+    audio: soundfile,
   },
 
   {
@@ -54,6 +56,7 @@ const datas = [
       தீமோ. 3:16`,
     },
     counter: 4,
+    audio: soundfile,
   },
   {
     id: 204,
@@ -70,6 +73,7 @@ const datas = [
       1:7, 9; சங். 66:18; ஏசா. 59:1-2`,
     },
     counter: 5,
+    audio: soundfile,
   },
   {
     id: 205,
@@ -84,6 +88,7 @@ const datas = [
          மாற். 12:30`,
     },
     counter: 3,
+    audio: soundfile,
   },
   {
     id: 206,
@@ -99,6 +104,7 @@ const datas = [
     },
 
     counter: 5,
+    audio: soundfile,
   },
   {
     id: 207,
@@ -112,12 +118,14 @@ const datas = [
         6:18; மத். 7:7; சங். 143:8`,
     },
     counter: 4,
+    audio: soundfile,
   },
   {
     id: 208,
     header: { English: `End`, Tamil: `முடிவு` },
     textWord: { English: `Hallelujah`, Tamil: `அல்லேலூயா` },
     counter: 0,
+    audio: soundfile,
   },
 ];
 export default datas;

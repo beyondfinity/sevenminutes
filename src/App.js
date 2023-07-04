@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import datas from "./Utilis";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBackward } from "@fortawesome/free-solid-svg-icons";
-// import soundfile from "./soundfile/audio.mp3";
+import soundfile from "./soundfile/audio.mp3";
 
 let obj = datas;
 
@@ -26,6 +26,7 @@ function App() {
           } else {
             clearInterval(counterInterval); // Stop current counter
             const prevIndex = index;
+
             setIndex((prevIndex) => prevIndex + 1); // Move to next object
             return obj[prevIndex + 1]?.counter; // Set counter of next object or 0 if no more objects
           }
@@ -38,8 +39,8 @@ function App() {
   }, [index, obj, paused]);
 
   useEffect(() => {
-    if (count === undefined && index >= 1 && index <= 7) {
-      const audioElement = new Audio(obj[1].soundfile);
+    if (index > 0 && index <= 8) {
+      const audioElement = new Audio(obj[index].audio);
       audioElement.play().catch((error) => {
         console.log(error);
       });
@@ -49,7 +50,7 @@ function App() {
         audioElement.currentTime = 0;
       };
     }
-  }, [count, index]);
+  }, [obj, index]);
 
   const handlePause = () => {
     setPaused((prevPaused) => !prevPaused);
@@ -120,8 +121,9 @@ function App() {
   return (
     <div className="App">
       {obj[index] && (
-        <div className="d-flex flex-column align-items-center justify-content-between vh-100">
-          {/* <audio src={soundfile} autoPlay controls hidden /> */}
+        <div className="d-flex flex-column align-items-center justify-content-between vh-100 p-4">
+          <audio src={soundfile} autoPlay controls hidden />
+
           <div className="container-text m-3">
             {/* heading */}
             <h1 className="heading text-center">
@@ -175,7 +177,7 @@ function App() {
                 }`}
                 onClick={handleRestart}
               >
-                {selectedLanguage === "English" ? "Restart" : "மீண்டும் தொடங்க"}
+                {selectedLanguage === "English" ? "RESTART" : "மீண்டும் தொடங்க"}
               </button>
               <button
                 className={`exit btn btn btn-danger  ${
@@ -185,7 +187,7 @@ function App() {
                 }`}
                 onClick={handleExitAnyway}
               >
-                {selectedLanguage === "English" ? "Exit" : "வெளியேறு"}
+                {selectedLanguage === "English" ? "EXIT" : "வெளியேறு"}
               </button>
             </div>
           ) : index === 0 ? (
@@ -193,7 +195,7 @@ function App() {
           ) : (
             <div className="d-flex justify-content-between vw-100">
               <button
-                className="btn btn-dark bg-black btn-hover-blue btn-back"
+                className="btn btn-dark bg-black btn-hover-blue btn-back py-3"
                 onClick={handleBack}
               >
                 <FontAwesomeIcon icon={faBackward} />
@@ -206,10 +208,10 @@ function App() {
               >
                 {paused
                   ? selectedLanguage === "English"
-                    ? "Continue"
+                    ? "CONTINUE"
                     : "தொடர்க"
                   : selectedLanguage === "English"
-                  ? "Pause"
+                  ? "PAUSE"
                   : "இடைநிறுத்து"}
               </button>
               <button
@@ -222,10 +224,11 @@ function App() {
                 data-bs-target="#exampleModal"
                 onClick={handleExit}
               >
-                {selectedLanguage === "English" ? "Exit" : "வெளியேறு"}
+                {selectedLanguage === "English" ? "EXIT" : "வெளியேறு"}
               </button>
             </div>
           )}
+
           <div
             className="modal"
             id="exampleModal"
@@ -253,7 +256,7 @@ function App() {
                     }`}
                     data-bs-dismiss="modal"
                   >
-                    {selectedLanguage === "English" ? "Resume" : "தொடர்க"}
+                    {selectedLanguage === "English" ? "RESUME" : "தொடர்க"}
                   </button>
                   <button
                     type="button"
@@ -261,7 +264,7 @@ function App() {
                     className="btn btn-light btn-lg border-0 rounded-0"
                   >
                     {selectedLanguage === "English"
-                      ? "Exit anyway"
+                      ? "EXIT ANYWAY"
                       : "மேலும் வெளியேறுக"}
                   </button>
                 </div>
@@ -270,7 +273,6 @@ function App() {
           </div>
         </div>
       )}
-      {showDuration}
     </div>
   );
 }
