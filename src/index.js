@@ -10,13 +10,13 @@ import Popper from "popper.js";
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
-      .register("service-worker.js")
+      .register("./service-worker.js", { scope: "/app_prayer/" })
       .then((registration) => {
         console.log(
           "Service Worker registered with scope:",
           registration.scope
         );
-        console.log(registration.active.state);
+        console.log(registration);
       })
       .catch((error) => {
         console.log("Service Worker registration failed:", error);
