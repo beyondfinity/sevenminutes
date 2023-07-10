@@ -1,9 +1,17 @@
 const cacheKey = "app_prayer";
 const assetsToCache = [
-  "/src/index.js",
-  "/src/App.js",
-  "/src/App.css",
-  "/src/Utility.js",
+  "/",
+  "./index.html",
+  "./manifest.json",
+  "./favicon.ico",
+  "./static/js/787.28cb0dcd.chunk.js",
+  "./static/js/787.28cb0dcd.chunk.js.map",
+  "./static/js/main.4d16d95e.js",
+  "./static/js/main.4d16d95e.js.LICENSE.txt",
+  "./static/js/main.4d16d95e.js.map",
+  "./static/css/main.e5cedf93.css",
+  "./static/css/main.e5cedf93.css.map",
+  "./static/media/audio.0526e343e4ea532f90e6.mp3",
 ];
 
 //Call Install event
@@ -34,36 +42,43 @@ self.addEventListener("activate", (e) => {
     })
   );
 });
-
 // self.addEventListener("fetch", (event) => {
+//   console.log("Service Worker: Fetching");
 //   event.respondWith(
-//     fetch(event.request)
-//       .then((response) => {
-//         // Check if the response is a partial response (status code 206)
-//         if (response.status === 206) {
-//           // Handle partial response appropriately
-//           return response;
-//         }
-
-//         // Perform cache operation for non-partial responses
-//         const clonedResponse = response.clone();
-//         caches.open("cacheKey").then((cache) => {
-//           cache.put(event.request, clonedResponse);
-//         });
-
+//     caches.match(event.request).then((response) => {
+//       // Return the cached response if found
+//       if (response) {
 //         return response;
-//       })
-//       .catch((error) => {
-//         // Handle fetch errors
-//         console.log("Fetch error:", error);
-//       })
+//       }
+
+//       // If the request is not cached, fetch it from the network
+//       return fetch(event.request)
+//         .then((networkResponse) => {
+//           // Cache the fetched response for future use
+//           if (networkResponse.ok && networkResponse.status === 200) {
+//             const clonedResponse = networkResponse.clone();
+//             caches.open(cacheKey).then((cache) => {
+//               cache.put(event.request, clonedResponse);
+//             });
+//           }
+
+//           return networkResponse;
+//         })
+//         .catch(() => {
+//           return new Response("<h1>You are offline</h1>", {
+//             headers: { "Content-Type": "text/html" },
+//           });
+//         });
+//     })
 //   );
 // });
 
+// ----------------------------------------------------------------------
 self.addEventListener("fetch", (event) => {
   console.log("Service Worker: Fetching");
   event.respondWith(
     caches.match(event.request).then((response) => {
+      console.log(event.request);
       // Return the cached response if found
       if (response) {
         return response;
@@ -77,7 +92,8 @@ self.addEventListener("fetch", (event) => {
             const clonedResponse = networkResponse.clone();
             caches.open(cacheKey).then((cache) => {
               // cache.put(event.request, clonedResponse);
-              cache.add(event.request, clonedResponse);
+              cache.put(event.request, clonedResponse);
+              console.log(event.request);
             });
           }
 
