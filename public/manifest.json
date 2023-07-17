@@ -1,6 +1,6 @@
 {
-  "short_name": "Prayerapp",
-  "name": "Prayerapp",
+  "short_name": "sevenminutes",
+  "name": "sevenminutes",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,26 +8,9 @@
       "type": "image/x-icon"
     },
     {
-      "src": "maskable.png",
-      "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any maskable"
-    },
-    {
       "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192"
-    },
-
-    {
-      "src": "logo384.png",
-      "type": "image/png",
-      "sizes": "384x384"
-    },
-    {
-      "src": "logo256.png",
-      "type": "image/png",
-      "sizes": "256x256"
     },
     {
       "src": "logo512.png",
@@ -35,7 +18,7 @@
       "sizes": "512x512"
     }
   ],
-  "start url": ".",
+  "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
