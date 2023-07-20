@@ -126,14 +126,25 @@ function App() {
 
           <div className="container-text m-3">
             {/* heading */}
-            <h1 className="heading text-center">
-              {selectedLanguage === "English"
-                ? obj[index].header?.English
-                : obj[index].header?.Tamil}
-            </h1>
+            {obj[index].id === 200 ? (
+              <>
+                <h1 className="heading text-center">
+                  {obj[index].header.English}
+                </h1>
+                <h1 className="heading text-center">
+                  {obj[index].header.Tamil}
+                </h1>
+              </>
+            ) : (
+              <h1 className="heading text-center">
+                {selectedLanguage === "English"
+                  ? obj[index].header?.English
+                  : obj[index].header?.Tamil}
+              </h1>
+            )}
 
             {obj[index].id === 200 ? (
-              <div className="lang-toggle d-flex flex-column align-items-center gap-4  ">
+              <div className="lang-toggle d-flex flex-column align-items-center gap-4 ">
                 <button
                   className="lang-btn btn btn-primary primary-lang"
                   onClick={handleLanguageToggle}
