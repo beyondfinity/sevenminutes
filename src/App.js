@@ -133,7 +133,7 @@ function App() {
             </h1>
 
             {obj[index].id === 200 ? (
-              <div className="lang-toggle d-flex flex-column align-items-center gap-4 vh-100 ">
+              <div className="lang-toggle d-flex flex-column align-items-center gap-4  ">
                 <button
                   className="lang-btn btn btn-primary primary-lang"
                   onClick={handleLanguageToggle}
