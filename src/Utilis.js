@@ -6,8 +6,8 @@ const datas = [
       English: `7 Minutes With The Lord`,
       Tamil: `கர்த்தருடன் 7 நிமிடங்கள்`,
     },
-    lang1: "English",
-    lang2: "Tamil",
+    lang1: "Tamil",
+    lang2: "English",
     counter: 0,
   },
   {

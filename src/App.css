@@ -96,14 +96,14 @@
   padding: 2% !important;
 }
 .primary-lang {
-  background-color: teal;
+  background-color: rgb(104, 17, 104) !important;
   border: none !important;
   margin-top: 40% !important;
   width: 80% !important;
   font-size: xx-large !important;
 }
 .secondary-lang {
-  background-color: rgba(94, 71, 94, 0.877);
+  background-color: rgb(66, 66, 121) !important;
   border: none !important;
   width: 80% !important;
   font-size: xx-large !important;
