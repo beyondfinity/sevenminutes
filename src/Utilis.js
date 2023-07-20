@@ -1,4 +1,4 @@
-import soundfile from "./soundfile/audio.mp3";
+import soundfile from "./soundfile/SevenMinutes.mp3";
 const datas = [
   {
     id: 200,
@@ -108,7 +108,7 @@ const datas = [
   },
   {
     id: 207,
-    header: { English: "Petition", Tamil: `விண்ணப்பித்தல்` },
+    header: { English: "Petettion", Tamil: `விண்ணப்பித்தல்` },
     text: {
       English: `Asking the Lord for needs,growth and persons that need salvation
       - 1 Tim.2:1:Eph.6:18;Matt.7:7; Psa.143:8`,

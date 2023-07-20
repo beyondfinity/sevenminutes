@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import datas from "./Utilis";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBackward } from "@fortawesome/free-solid-svg-icons";
-import soundfile from "./soundfile/audio.mp3";
+import soundfile from "./soundfile/SevenMinutes.mp3";
 
 let obj = datas;
 
@@ -251,7 +251,7 @@ function App() {
               <div className="modal-content">
                 <div className="modal-body popup-content">
                   {selectedLanguage === "English"
-                    ? '[Jesus] said... "So were you not able to watch with Me for ' +
+                    ? '[Jesus] said... "So were you not able to watch with Me for [' +
                       remainingMinutesText +
                       ' more minutes]? Watch and pray that you may not enter into temptation. The spirit is willing, but the flesh is weak." (Matt. 26:40b-41)'
                     : 'இயேசு கூறினதாவது "உங்களால் [' +
