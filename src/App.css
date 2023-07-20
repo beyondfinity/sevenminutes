@@ -100,12 +100,15 @@
   border: none !important;
   margin-top: 40% !important;
   width: 80% !important;
+  padding: 5% !important;
   font-size: xx-large !important;
 }
 .secondary-lang {
   background-color: rgb(66, 66, 121) !important;
   border: none !important;
   width: 80% !important;
+  padding: 5% !important;
+
   font-size: xx-large !important;
 }
 .start-btn {
@@ -185,10 +188,12 @@
     margin-top: 50% !important;
     width: 80% !important;
     font-size: larger !important;
+    padding: 7% !important;
   }
   .secondary-lang {
     width: 80% !important;
     font-size: larger !important;
+    padding: 7% !important;
   }
   .start-btn {
     font-size: medium !important;
@@ -203,7 +208,7 @@
   }
   .restart-btn {
     font-size: medium !important;
-    padding: 6% !important;
+    padding: 8% !important;
     width: 70% !important;
     margin-left: 2% !important;
     margin-bottom: 1% !important;
@@ -212,7 +217,7 @@
     font-size: medium !important;
     width: 60% !important;
     text-align: center !important;
-    padding: 3% !important;
+    padding: 7% !important;
     gap: 3 !important;
   }
   .popup-content {
@@ -285,7 +290,7 @@
     font-size: x-large !important;
     width: 60% !important;
     text-align: center !important;
-    padding: 3% !important;
+    padding: 5% !important;
     gap: 3 !important;
   }
 

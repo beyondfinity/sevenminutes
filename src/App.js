@@ -152,7 +152,7 @@ function App() {
                   {obj[index].lang1}
                 </button>
                 <button
-                  className="lang-btn btn btn-secondary btn-large p-6  secondary-lang"
+                  className="lang-btn btn btn-secondary btn-large secondary-lang"
                   onClick={handleLanguageToggle}
                 >
                   {obj[index].lang2}
@@ -191,7 +191,7 @@ function App() {
                 {selectedLanguage === "English" ? "RESTART" : "மீண்டும் தொடங்க"}
               </button>
               <button
-                className={`exit btn btn btn-danger  ${
+                className={`exit btn btn btn-danger ${
                   selectedLanguage === "Tamil"
                     ? "tamil-exit-btn"
                     : "eng-exit-btn"
@@ -206,7 +206,7 @@ function App() {
           ) : (
             <div className="d-flex justify-content-between vw-100">
               <button
-                className="btn btn-dark bg-black btn-hover-blue btn-back py-3"
+                className="btn btn-dark bg-black btn-hover-blue btn-back py-4"
                 onClick={handleBack}
               >
                 <FontAwesomeIcon icon={faBackward} />
@@ -262,7 +262,7 @@ function App() {
                   <button
                     type="button"
                     onClick={handleResume}
-                    className={`btn btn-light btn-lg  border-0 rounded-0 px-4 ${
+                    className={`btn btn-light btn-lg  border-0 rounded-0 px-4 py-3 ${
                       selectedLanguage === "Tamil" ? "tamil-resume-btn" : ""
                     }`}
                     data-bs-dismiss="modal"
@@ -272,7 +272,7 @@ function App() {
                   <button
                     type="button"
                     onClick={handleExitAnyway}
-                    className="btn btn-light btn-lg border-0 rounded-0"
+                    className="btn btn-light btn-lg border-0 rounded-0 py-3"
                   >
                     {selectedLanguage === "English"
                       ? "EXIT ANYWAY"
