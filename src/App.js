@@ -1,9 +1,10 @@
+import { messaging } from "./firebase";
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import datas from "./Utilis";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBackward } from "@fortawesome/free-solid-svg-icons";
-import soundfile from "./soundfile/audio.mp3";
+import soundfile from "./soundfile/SevenMinutes.mp3";
 
 let obj = datas;
 
@@ -12,9 +13,30 @@ function App() {
   const [paused, setPaused] = useState(false);
   const [showDuration, setShowDuration] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("English");
-
   const [count, setCount] = useState(obj[index]?.counter);
 
+  //Permission requesting
+  useEffect(() => {
+    const requestNotificationPermission = async () => {
+      try {
+        await Notification.requestPermission();
+        console.log("Notification permission granted.");
+      } catch (error) {
+        console.log("Unable to get permission for notifications.", error);
+      }
+    };
+
+    requestNotificationPermission();
+  }, []);
+  // Retrieve the device token
+  messaging
+    .getToken()
+    .then((token) => {
+      console.log("Device token:", token);
+    })
+    .catch((error) => {
+      console.log("Error retrieving device token:", error);
+    });
   useEffect(() => {
     let counterInterval;
 
@@ -39,7 +61,7 @@ function App() {
   }, [index, obj, paused]);
 
   useEffect(() => {
-    if (index > 0 && index <= 8) {
+    if (obj[index]?.id > 200 && obj[index]?.id < 209) {
       const audioElement = new Audio(obj[index].audio);
       audioElement.play().catch((error) => {
         console.log(error);
