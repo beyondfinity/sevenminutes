@@ -122,7 +122,9 @@ function App() {
     <div className="App">
       {obj[index] && (
         <div className="d-flex flex-column align-items-center justify-content-between vh-100 p-4">
-          <audio src={soundfile} autoPlay controls hidden />
+          {index > 0 && index <= 8 && (
+            <audio src={obj[index].audio} autoPlay controls hidden />
+          )}
 
           <div className="container-text m-3">
             {/* heading */}
@@ -206,7 +208,7 @@ function App() {
           ) : (
             <div className="d-flex justify-content-between vw-100">
               <button
-                className="btn btn-dark bg-black btn-hover-blue btn-back py-4"
+                className="btn btn-dark bg-black btn-hover-blue btn-back py-3"
                 onClick={handleBack}
               >
                 <FontAwesomeIcon icon={faBackward} />
@@ -262,7 +264,7 @@ function App() {
                   <button
                     type="button"
                     onClick={handleResume}
-                    className={`btn btn-light btn-lg  border-0 rounded-0 px-4 py-3 ${
+                    className={`btn btn-light btn-lg  border-0 rounded-0 px-4 py-2 ${
                       selectedLanguage === "Tamil" ? "tamil-resume-btn" : ""
                     }`}
                     data-bs-dismiss="modal"
@@ -272,7 +274,7 @@ function App() {
                   <button
                     type="button"
                     onClick={handleExitAnyway}
-                    className="btn btn-light btn-lg border-0 rounded-0 py-3"
+                    className="btn btn-light btn-lg border-0 rounded-0 py-2"
                   >
                     {selectedLanguage === "English"
                       ? "EXIT ANYWAY"

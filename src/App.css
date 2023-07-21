@@ -108,7 +108,6 @@
   border: none !important;
   width: 80% !important;
   padding: 5% !important;
-
   font-size: xx-large !important;
 }
 .start-btn {
@@ -208,7 +207,7 @@
   }
   .restart-btn {
     font-size: medium !important;
-    padding: 8% !important;
+    padding: 5% !important;
     width: 70% !important;
     margin-left: 2% !important;
     margin-bottom: 1% !important;
@@ -217,7 +216,7 @@
     font-size: medium !important;
     width: 60% !important;
     text-align: center !important;
-    padding: 7% !important;
+    padding: 6% !important;
     gap: 3 !important;
   }
   .popup-content {
