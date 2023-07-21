@@ -1,4 +1,4 @@
-import soundfile from "./soundfile/audio.mp3";
+import soundfile from "./soundfile/SevenMinutes.mp3";
 const datas = [
   {
     id: 200,
