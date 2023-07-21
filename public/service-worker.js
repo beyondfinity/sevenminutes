@@ -1,12 +1,12 @@
 var CACHE_NAME = "pwa-task-manager";
 var urlsToCache = [
   "	/sevenminutes/",
-  "/sevenminutes/static/css/main.e5cedf93.css",
-  "/sevenminutes/static/css/main.e5cedf93.css.map",
-  "/sevenminutes/static/js/main.ccbf738f.js",
-  "/sevenminutes/static/js/main.ccbf738f.js.LICENSE.txt",
-  "/sevenminutes/static/js/main.ccbf738f.js.map",
-  "/sevenminutes/static/media/audio.0526e343e4ea532f90e6.mp3",
+  "/sevenminutes/static/css/main.a9c0a136.css",
+  "/sevenminutes/static/css/main.a9c0a136.css.map",
+  "/sevenminutes/static/js/main.9c405bb5.js",
+  "/sevenminutes/static/js/main.9c405bb5.js.LICENSE.txt",
+  "/sevenminutes/static/js/main.9c405bb5.js.map",
+  "/sevenminutes/static/media/SevenMinutes.c9d00050ca8cb56485cd.mp3",
   "/sevenminutes/asset-manifest.json",
   "/sevenminutes/favicon.ico",
   "/sevenminutes/index.html",
@@ -14,19 +14,30 @@ var urlsToCache = [
   "/sevenminutes/logo512.png",
   "/sevenminutes/manifest.json",
   "/sevenminutes/service-worker.js",
-  // "/",
-  // "./index.html",
-  // "./manifest.json",
-  // "./favicon.ico",
-  // "./static/js/787.28cb0dcd.chunk.js",
-  // "./static/js/787.28cb0dcd.chunk.js.map",
-  // "./static/js/main.4d16d95e.js",
-  // "./static/js/main.4d16d95e.js.LICENSE.txt",
-  // "./static/js/main.4d16d95e.js.map",
-  // "./static/css/main.e5cedf93.css",
-  // "./static/css/main.e5cedf93.css.map",
-  // "./static/media/audio.0526e343e4ea532f90e6.mp3",
 ];
+
+// function getCacheKey(url) {
+//   return url.includes(CACHE_NAME) ? url : `${CACHE_NAME}-${url}`;
+// }
+
+// const urlsToCache = [
+//   "/sevenminutes/",
+//   getCacheKey("/sevenminutes/static/css/main.a9c0a136.css"),
+//   getCacheKey("/sevenminutes/static/css/main.a9c0a136.css.map"),
+//   getCacheKey("/sevenminutes/static/js/main.9c405bb5.js"),
+//   getCacheKey("/sevenminutes/static/js/main.9c405bb5.js.LICENSE.txt"),
+//   getCacheKey("/sevenminutes/static/js/main.9c405bb5.js.map"),
+//   getCacheKey(
+//     "/sevenminutes/static/media/SevenMinutes.c9d00050ca8cb56485cd.mp3"
+//   ),
+//   getCacheKey("/sevenminutes/asset-manifest.json"),
+//   getCacheKey("/sevenminutes/favicon.ico"),
+//   getCacheKey("/sevenminutes/index.html"),
+//   getCacheKey("/sevenminutes/logo192.png"),
+//   getCacheKey("/sevenminutes/logo512.png"),
+//   getCacheKey("/sevenminutes/manifest.json"),
+//   getCacheKey("/sevenminutes/service-worker.js"),
+// ];
 
 // Install a service worker
 self.addEventListener("install", (event) => {

@@ -19,10 +19,6 @@
 .modal-footer button:hover {
   background-color: orange !important;
 }
-.start-btn {
-  width: 40% !important;
-  font-size: xx-large !important;
-}
 
 /* ----------------------------------- */
 
@@ -110,13 +106,7 @@
   padding: 5% !important;
   font-size: xx-large !important;
 }
-.start-btn {
-  width: 20% !important;
-  font-size: xx-large;
-}
-.start-btn:hover {
-  background-color: navy !important;
-}
+
 /* -------------------------------------------------- */
 .restart-btn {
   background-color: rgb(22, 22, 82) !important;
@@ -138,6 +128,12 @@
   padding: 3% !important;
   gap: 3 !important;
 }
+.ruler {
+  width: 100%;
+  height: 1px;
+  background-color: grey;
+  margin: 10px 0; /* Adjust this value to control the spacing around the ruler */
+}
 
 /* Mobile devices */
 @media screen and (max-width: 576px) {
@@ -153,19 +149,19 @@
     font-weight: 400 !important;
   }
   .btn-back {
-    padding-inline: 6% !important;
+    padding-inline: 5% !important;
 
     margin-left: 1% !important;
     font-size: medium !important;
     margin-bottom: 1% !important;
   }
   .eng-continue-btn {
-    padding-inline: 15% !important;
+    padding-inline: 13% !important;
     font-size: medium !important;
     margin-bottom: 1% !important;
   }
   .tamil-continue-btn {
-    padding-inline: 7% !important;
+    padding-inline: 4% !important;
     font-size: medium !important;
     margin-bottom: 1% !important;
   }
@@ -194,20 +190,10 @@
     font-size: larger !important;
     padding: 7% !important;
   }
-  .start-btn {
-    font-size: medium !important;
-    width: 30% !important;
-    margin-bottom: 5% !important;
-  }
-  .tamil-start-btn {
-    width: 40% !important;
-    font-size: larger !important;
-    padding: 2% !important  ;
-    margin-bottom: 5% !important;
-  }
+
   .restart-btn {
     font-size: medium !important;
-    padding: 5% !important;
+    padding: 6% !important;
     width: 70% !important;
     margin-left: 2% !important;
     margin-bottom: 1% !important;
@@ -216,7 +202,7 @@
     font-size: medium !important;
     width: 60% !important;
     text-align: center !important;
-    padding: 6% !important;
+    padding: 5% !important;
     gap: 3 !important;
   }
   .popup-content {

@@ -126,15 +126,16 @@ function App() {
             <audio src={obj[index].audio} autoPlay controls hidden />
           )}
 
-          <div className="container-text m-3">
+          <div className="container-text m-2">
             {/* heading */}
             {obj[index].id === 200 ? (
               <>
                 <h1 className="heading text-center">
-                  {obj[index].header.English}
-                </h1>
-                <h1 className="heading text-center">
                   {obj[index].header.Tamil}
+                </h1>
+                <div className="ruler"></div>
+                <h1 className="heading text-center">
+                  {obj[index].header.English}
                 </h1>
               </>
             ) : (
