@@ -21,8 +21,8 @@ function getCacheKey(url) {
 
 const urlsToCache = [
   "/sevenminutes/",
-  getCacheKey("/sevenminutes/static/css/main.e1e45625.css"),
-  getCacheKey("/sevenminutes/static/css/main.e1e45625.css.map"),
+  getCacheKey("/sevenminutes/static/css/main.a9c0a136.css"),
+  getCacheKey("/sevenminutes/static/css/main.a9c0a136.css.map"),
   getCacheKey("/sevenminutes/static/js/main.9c405bb5.js"),
   getCacheKey("/sevenminutes/static/js/main.9c405bb5.js.LICENSE.txt"),
   getCacheKey("/sevenminutes/static/js/main.9c405bb5.js.map"),
