@@ -1,4 +1,6 @@
-import { messaging } from "./firebase";
+// import { messaging } from "./firebase";
+import firebaseApp from "./firebaseApp";
+import "firebase/messaging";
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import datas from "./Utilis";
@@ -15,28 +17,51 @@ function App() {
   const [selectedLanguage, setSelectedLanguage] = useState("English");
   const [count, setCount] = useState(obj[index]?.counter);
 
-  //Permission requesting
   useEffect(() => {
-    const requestNotificationPermission = async () => {
-      try {
-        await Notification.requestPermission();
-        console.log("Notification permission granted.");
-      } catch (error) {
-        console.log("Unable to get permission for notifications.", error);
-      }
-    };
+    const messaging = firebaseApp.messaging();
 
-    requestNotificationPermission();
-  }, []);
-  // Retrieve the device token
-  messaging
-    .getToken()
-    .then((token) => {
-      console.log("Device token:", token);
-    })
-    .catch((error) => {
-      console.log("Error retrieving device token:", error);
+    // Request permission for notifications
+    messaging
+      .requestPermission()
+      .then(() => messaging.getToken())
+      .then((token) => {
+        // You can send this token to your server to target specific devices with notifications
+        console.log("FCM Token:", token);
+      })
+      .catch((error) => {
+        console.log("Error getting FCM token:", error);
+      });
+
+    // Handle incoming messages while the app is in the foreground
+    messaging.onMessage((payload) => {
+      console.log("Message received:", payload);
     });
+  }, []);
+
+  // Rest of your component code...
+
+  //Permission requesting
+  // useEffect(() => {
+  //   const requestNotificationPermission = async () => {
+  //     try {
+  //       await Notification.requestPermission();
+  //       console.log("Notification permission granted.");
+  //     } catch (error) {
+  //       console.log("Unable to get permission for notifications.", error);
+  //     }
+  //   };
+
+  //   requestNotificationPermission();
+  // }, []);
+  // // Retrieve the device token
+  // messaging
+  //   .getToken()
+  //   .then((token) => {
+  //     console.log("Device token:", token);
+  //   })
+  //   .catch((error) => {
+  //     console.log("Error retrieving device token:", error);
+  //   });
   useEffect(() => {
     let counterInterval;
 

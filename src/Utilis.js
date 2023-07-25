@@ -92,7 +92,7 @@ const datas = [
   },
   {
     id: 206,
-    header: { English: `ThanksGiving`, Tamil: `நன்றிக்கூறுதல்` },
+    header: { English: `Thanksgiving`, Tamil: `நன்றிகூறுதல்` },
     text: {
       English: ` Giving thanks for all things; for all the persons, situations
       and things in your life and praising Him -Eph.5:20; 1 Thes.5:18`,
