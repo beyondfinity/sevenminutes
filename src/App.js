@@ -1,4 +1,4 @@
-import { messaging } from "./firebase";
+// import { messaging } from "./firebase";
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import datas from "./Utilis";
@@ -16,27 +16,28 @@ function App() {
   const [count, setCount] = useState(obj[index]?.counter);
 
   //Permission requesting
-  useEffect(() => {
-    const requestNotificationPermission = async () => {
-      try {
-        await Notification.requestPermission();
-        console.log("Notification permission granted.");
-      } catch (error) {
-        console.log("Unable to get permission for notifications.", error);
-      }
-    };
+  // useEffect(() => {
+  //   const requestNotificationPermission = async () => {
+  //     try {
+  //       await Notification.requestPermission();
+  //       console.log("Notification permission granted.");
+  //     } catch (error) {
+  //       console.log("Unable to get permission for notifications.", error);
+  //     }
+  //   };
 
-    requestNotificationPermission();
-  }, []);
-  // Retrieve the device token
-  messaging
-    .getToken()
-    .then((token) => {
-      console.log("Device token:", token);
-    })
-    .catch((error) => {
-      console.log("Error retrieving device token:", error);
-    });
+  //   requestNotificationPermission();
+  // }, []);
+  // // Retrieve the device token
+  // messaging
+  //   .getToken()
+  //   .then((token) => {
+  //     console.log("Device token:", token);
+  //   })
+  //   .catch((error) => {
+  //     console.log("Error retrieving device token:", error);
+  //   });
+
   useEffect(() => {
     let counterInterval;
 
@@ -265,9 +266,9 @@ function App() {
                     ? '[Jesus] said... "So were you not able to watch with Me for ' +
                       remainingMinutesText +
                       ' more minutes]? Watch and pray that you may not enter into temptation. The spirit is willing, but the flesh is weak." (Matt. 26:40b-41)'
-                    : 'இயேசு கூறினதாவது "உங்களால் [' +
+                    : 'இயேசு கூறினதாவது "...உங்களால் [' +
                       remainingMinutesText +
-                      ' நிமிடங்கள்] என்னோடுகூட விழிப்பாயிருக்க முடியவில்லையா? நீங்கள் சோதனைக்குள்ளாகாதபடி விழிப்பாயிருந்து ஜெபம்பண்ணுங்கள். ஆவி சித்தமாயிருக்கிறது. ஆனால் மாம்சம் பலவீனமாயிருக்கிறது" (மத். 26:40-41)'}
+                      ' நிமிடங்கள்] என்னோடுகூட விழிப்பாயிருக்க முடியவில்லையா? நீங்கள் சோதனைக்குள்ளாகாதபடி விழிப்பாயிருந்து ஜெபம்பண்ணுங்கள். ஆவி சித்தமாயிருக்கிறது. ஆனால் மாம்சம் பலவீனமாயிருக்கிறது என்றார்." (மத். 26:40-41)'}
                 </div>
                 <div className="modal-footer d-flex justify-content-around">
                   <button

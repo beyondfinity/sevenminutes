@@ -5,6 +5,30 @@ import App from "./App";
 import "bootstrap";
 import $ from "jquery";
 import Popper from "popper.js";
+// import { messaging } from "./firebase";
+// import { messaging } from "firebase/messaging";
+
+// Permission requesting
+// const requestNotificationPermission = async () => {
+//   try {
+//     await Notification.requestPermission();
+//     console.log("Notification permission granted.");
+//   } catch (error) {
+//     console.log("Unable to get permission for notifications.", error);
+//   }
+// };
+
+// requestNotificationPermission();
+
+// // Retrieve the device token
+// messaging
+//   .getToken()
+//   .then((token) => {
+//     console.log("Device token:", token);
+//   })
+//   .catch((error) => {
+//     console.log("Error retrieving device token:", error);
+//   });
 
 // if ("serviceWorker" in navigator) {
 //   window.addEventListener("load", () => {
