@@ -52,7 +52,7 @@ const datas = [
       Tamil: `நம் பயிற்றுவிக்கப்பட்ட ஆவியை பயன்படுத்தி
       ஒன்று அல்லது இரண்டு வசனத்தை
       ஜெபித்தல். வசனங்களை தனிப்பட்ட
-      ஜெபமாக மாற்றுதல் – எபே. 6:17-18; 2
+      ஜெபமாக மாற்றுதல் – எபே.6:17-18; 2
       தீமோ. 3:16`,
     },
     counter: 4,
@@ -70,7 +70,7 @@ const datas = [
       ஐக்கியத்திற்கான எல்லா தடைகளையும்
       அகற்றுதல். மன்னிக்கப்படும்படியும்
       கழுவப்படும்படியும் கேட்குதல் – 1 யோவான்
-      1:7, 9; சங். 66:18; ஏசா. 59:1-2`,
+      1:7,9; சங். 66:18; ஏசா. 59:1-2`,
     },
     counter: 5,
     audio: soundfile,
@@ -92,7 +92,7 @@ const datas = [
   },
   {
     id: 206,
-    header: { English: `ThanksGiving`, Tamil: `நன்றிக்கூறுதல்` },
+    header: { English: `Thanksgiving`, Tamil: `நன்றிக்கூறுதல்` },
     text: {
       English: ` Giving thanks for all things; for all the persons, situations
       and things in your life and praising Him -Eph.5:20; 1 Thes.5:18`,
@@ -108,7 +108,7 @@ const datas = [
   },
   {
     id: 207,
-    header: { English: "Petition", Tamil: `விண்ணப்பித்தல்` },
+    header: { English: "Petettion", Tamil: `விண்ணப்பித்தல்` },
     text: {
       English: `Asking the Lord for needs,growth and persons that need salvation
       - 1 Tim.2:1:Eph.6:18;Matt.7:7; Psa.143:8`,
