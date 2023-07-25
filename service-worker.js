@@ -6,7 +6,7 @@ var urlsToCache = [
   "/sevenminutes/static/js/main.3422052e.js",
   "/sevenminutes/static/js/main.3422052e.js.LICENSE.txt",
   "/sevenminutes/static/js/main.3422052e.js.map",
-  "/sevenminutes/static/media/audio.c9d00050ca8cb56485cd..mp3",
+  "/sevenminutes/static/media/SevenMinutes.c9d00050ca8cb56485cd.mp3",
   "/sevenminutes/asset-manifest.json",
   "/sevenminutes/favicon.ico",
   "/sevenminutes/index.html",
