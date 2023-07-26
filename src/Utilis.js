@@ -23,7 +23,7 @@ const datas = [
         கர்த்தருடைய நாமத்தை நோக்கி கூப்பிடுதல் –
         1 கொரி. 12:3, ரோ. 8:6; 10:12-13`,
     },
-    counter: 3,
+    counter: 30,
     audio: soundfile,
   },
   {
@@ -39,7 +39,7 @@ const datas = [
         கொரி. 3:16; சங். 62:8`,
     },
 
-    counter: 5,
+    counter: 60,
     audio: soundfile,
   },
 
@@ -55,7 +55,7 @@ const datas = [
       ஜெபமாக மாற்றுதல் – எபே.6:17-18; 2
       தீமோ. 3:16`,
     },
-    counter: 4,
+    counter: 150,
     audio: soundfile,
   },
   {
@@ -72,7 +72,7 @@ const datas = [
       கழுவப்படும்படியும் கேட்குதல் – 1 யோவான்
       1:7,9; சங். 66:18; ஏசா. 59:1-2`,
     },
-    counter: 5,
+    counter: 60,
     audio: soundfile,
   },
   {
@@ -87,7 +87,7 @@ const datas = [
          அவருக்கு கொடுத்தல் – ரோ. 12:1-2; 6:13, 19;
          மாற். 12:30`,
     },
-    counter: 3,
+    counter: 30,
     audio: soundfile,
   },
   {
@@ -103,7 +103,7 @@ const datas = [
      – எபே. 5:20; 1 தெச. 5:18`,
     },
 
-    counter: 5,
+    counter: 30,
     audio: soundfile,
   },
   {
@@ -117,7 +117,7 @@ const datas = [
         கர்த்தரிடம் கேட்குதல் – 1 தீமோ. 2:2; எபே.
         6:18; மத். 7:7; சங். 143:8`,
     },
-    counter: 4,
+    counter: 60,
     audio: soundfile,
   },
   {

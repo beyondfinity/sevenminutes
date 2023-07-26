@@ -84,9 +84,9 @@ function App() {
         prevMinutes += obj[i].counter;
       }
     }
-    return prevMinutes % 2 === 0
-      ? Math.floor(prevMinutes / 2)
-      : (prevMinutes / 2).toFixed(1);
+    return prevMinutes % 60 === 0
+      ? Math.floor(prevMinutes / 60)
+      : (prevMinutes / 60).toFixed(1);
   };
   let remainingMinutesText = "";
   if (showDuration) {
