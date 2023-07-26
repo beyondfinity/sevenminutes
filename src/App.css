@@ -1,3 +1,15 @@
+/* Hide the pull-to-refresh indicator for Chrome, Safari, and Opera */
+body {
+  overscroll-behavior-y: contain; /* Older Chrome and Safari */
+  overscroll-behavior: contain; /* Newer Chrome, Safari, and Opera */
+}
+
+/* Hide the pull-to-refresh indicator for Firefox */
+html {
+  overscroll-behavior-y: contain;
+  overscroll-behavior: contain;
+}
+
 .modal-content {
   background-color: black !important;
   color: white !important;
