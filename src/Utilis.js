@@ -42,8 +42,6 @@ const datas = [
       English: `Using our exercised spirit to pray over a verse or two. Turning
       the verses into a personal prayer - Eph.6:17-18;2 Tim.3:16`,
       Tamil: `நம் பயிற்றுவிக்கப்பட்ட ஆவியை பயன்படுத்தி ஒன்று அல்லது இரண்டு வசனத்தை ஜெபித்தல். வசனங்களை தனிப்பட்ட ஜெபமாக மாற்றுதல் – எபே. 6:17-18; 2 தீமோ. 3:16`,
-      ஜெபமாக மாற்றுதல் – எபே. 6:17-18; 2
-      தீமோ. 3:16`,
     },
     counter: 150,
     audio: soundfile,
