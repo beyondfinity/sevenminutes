@@ -144,18 +144,32 @@ function App() {
     <div className="App">
       {obj[index] && (
         <div className="d-flex flex-column align-items-center justify-content-between vh-100 p-4">
-          <audio src={soundfile} autoPlay controls hidden />
+          {index > 0 && index <= 8 && (
+            <audio src={obj[index].audio} autoPlay controls hidden />
+          )}
 
-          <div className="container-text m-3">
+          <div className="container-text m-2">
             {/* heading */}
-            <h1 className="heading text-center">
-              {selectedLanguage === "English"
-                ? obj[index].header?.English
-                : obj[index].header?.Tamil}
-            </h1>
+            {obj[index].id === 200 ? (
+              <>
+                <h1 className="heading text-center">
+                  {obj[index].header.Tamil}
+                </h1>
+                <div className="ruler"></div>
+                <h1 className="heading text-center">
+                  {obj[index].header.English}
+                </h1>
+              </>
+            ) : (
+              <h1 className="heading text-center">
+                {selectedLanguage === "English"
+                  ? obj[index].header?.English
+                  : obj[index].header?.Tamil}
+              </h1>
+            )}
 
             {obj[index].id === 200 ? (
-              <div className="lang-toggle d-flex flex-column align-items-center gap-4 vh-100 ">
+              <div className="lang-toggle d-flex flex-column align-items-center gap-4 ">
                 <button
                   className="lang-btn btn btn-primary primary-lang"
                   onClick={handleLanguageToggle}
@@ -163,7 +177,7 @@ function App() {
                   {obj[index].lang1}
                 </button>
                 <button
-                  className="lang-btn btn btn-secondary btn-large p-6  secondary-lang"
+                  className="lang-btn btn btn-secondary btn-large secondary-lang"
                   onClick={handleLanguageToggle}
                 >
                   {obj[index].lang2}
@@ -202,7 +216,7 @@ function App() {
                 {selectedLanguage === "English" ? "RESTART" : "மீண்டும் தொடங்க"}
               </button>
               <button
-                className={`exit btn btn btn-danger  ${
+                className={`exit btn btn btn-danger ${
                   selectedLanguage === "Tamil"
                     ? "tamil-exit-btn"
                     : "eng-exit-btn"
@@ -262,18 +276,18 @@ function App() {
               <div className="modal-content">
                 <div className="modal-body popup-content">
                   {selectedLanguage === "English"
-                    ? '[Jesus] said... "So were you not able to watch with Me for ' +
+                    ? '[Jesus] said... "So were you not able to watch with Me for [' +
                       remainingMinutesText +
                       ' more minutes]? Watch and pray that you may not enter into temptation. The spirit is willing, but the flesh is weak." (Matt. 26:40b-41)'
                     : 'இயேசு கூறினதாவது "உங்களால் [' +
                       remainingMinutesText +
-                      ' நிமிடங்கள்] என்னோடுகூட விழிப்பாயிருக்க முடியவில்லையா? நீங்கள் சோதனைக்குள்ளாகாதபடி விழிப்பாயிருந்து ஜெபம்பண்ணுங்கள். ஆவி சித்தமாயிருக்கிறது. ஆனால் மாம்சம் பலவீனமாயிருக்கிறது" (மத். 26:40-41)'}
+                      ' நிமிடங்கள்] என்னோடுகூட விழிப்பாயிருக்க முடியவில்லையா? நீங்கள் சோதனைக்குள்ளாகாதபடி விழிப்பாயிருந்து ஜெபம்பண்ணுங்கள். ஆவி சித்தமாயிருக்கிறது. ஆனால் மாம்சம் பலவீனமாயிருக்கிறது என்றார்.”" (மத். 26:40-41)'}
                 </div>
                 <div className="modal-footer d-flex justify-content-around">
                   <button
                     type="button"
                     onClick={handleResume}
-                    className={`btn btn-light btn-lg  border-0 rounded-0 px-4 ${
+                    className={`btn btn-light btn-lg  border-0 rounded-0 px-4 py-2 ${
                       selectedLanguage === "Tamil" ? "tamil-resume-btn" : ""
                     }`}
                     data-bs-dismiss="modal"
@@ -283,7 +297,7 @@ function App() {
                   <button
                     type="button"
                     onClick={handleExitAnyway}
-                    className="btn btn-light btn-lg border-0 rounded-0"
+                    className="btn btn-light btn-lg border-0 rounded-0 py-2"
                   >
                     {selectedLanguage === "English"
                       ? "EXIT ANYWAY"

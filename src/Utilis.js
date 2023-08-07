@@ -6,8 +6,8 @@ const datas = [
       English: `7 Minutes With The Lord`,
       Tamil: `கர்த்தருடன் 7 நிமிடங்கள்`,
     },
-    lang1: "English",
-    lang2: "Tamil",
+    lang1: "Tamil",
+    lang2: "English",
     counter: 0,
   },
   {
@@ -92,7 +92,7 @@ const datas = [
   },
   {
     id: 206,
-    header: { English: `ThanksGiving`, Tamil: `நன்றிக்கூறுதல்` },
+    header: { English: `Thanksgiving`, Tamil: `நன்றிக்கூறுதல்` },
     text: {
       English: ` Giving thanks for all things; for all the persons, situations
       and things in your life and praising Him -Eph.5:20; 1 Thes.5:18`,
@@ -108,7 +108,7 @@ const datas = [
   },
   {
     id: 207,
-    header: { English: "Petition", Tamil: `விண்ணப்பித்தல்` },
+    header: { English: "Petettion", Tamil: `விண்ணப்பித்தல்` },
     text: {
       English: `Asking the Lord for needs,growth and persons that need salvation
       - 1 Tim.2:1:Eph.6:18;Matt.7:7; Psa.143:8`,
