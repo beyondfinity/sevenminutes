@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/sevenminutes/static/css/main.a9c0a136.css",
-    "main.js": "/sevenminutes/static/js/main.88441a8d.js",
+    "main.js": "/sevenminutes/static/js/main.d8925aee.js",
     "static/media/SevenMinutes.mp3": "/sevenminutes/static/media/SevenMinutes.c9d00050ca8cb56485cd.mp3",
     "index.html": "/sevenminutes/index.html",
     "main.a9c0a136.css.map": "/sevenminutes/static/css/main.a9c0a136.css.map",
-    "main.88441a8d.js.map": "/sevenminutes/static/js/main.88441a8d.js.map"
+    "main.d8925aee.js.map": "/sevenminutes/static/js/main.d8925aee.js.map"
   },
   "entrypoints": [
     "static/css/main.a9c0a136.css",
-    "static/js/main.88441a8d.js"
+    "static/js/main.d8925aee.js"
   ]
 }
