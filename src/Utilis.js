@@ -40,7 +40,7 @@ const datas = [
     header: { English: `Pray-reading`, Tamil: `ஜெப-வாசிப்பு` },
     text: {
       English: `Using our exercised spirit to pray over a verse or two. Turning
-      the verses into a personal prayer - Eph.6:17-18;2 Tim.3:16`,
+      the verses into a personal prayer – Eph. 6:17-18; 2 Tim. 3:16 `,
       Tamil: `நம் பயிற்றுவிக்கப்பட்ட ஆவியை பயன்படுத்தி ஒன்று அல்லது இரண்டு வசனத்தை ஜெபித்தல். வசனங்களை தனிப்பட்ட ஜெபமாக மாற்றுதல் – எபே. 6:17-18; 2 தீமோ. 3:16`,
     },
     counter: 150,
@@ -52,13 +52,12 @@ const datas = [
     text: {
       English: `Confessing the sins and offenses on our conscience and removing
       all blockages to fellowship.Asking for forgiveness and
-      cleansing-1 John 1:7,9; Psa.66:18; Isa.59:1-2`,
+      cleansing – 1 John 1:7, 9; Psa. 66:18; Isa. 59:1-2`,
       Tamil: `நம் மனச்சாட்சியில் இருக்கும் பாவங்களையும்,
       குற்றங்களையும் அறிக்கைசெய்து,
       ஐக்கியத்திற்கான எல்லா தடைகளையும்
       அகற்றுதல். மன்னிக்கப்படும்படியும்
-      கழுவப்படும்படியும் கேட்குதல் – 1 யோவான்
-      1:7, 9; சங். 66:18; ஏசா. 59:1-2`,
+      கழுவப்படும்படியும் கேட்குதல் – 1 யோவான் 1:7, 9; சங். 66:18; ஏசா. 59:1-2`,
     },
     counter: 60,
     audio: soundfile,
